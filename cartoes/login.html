@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gerador de Cartões Virtuais</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Bem-vindo!</h1>
+    <div id="loginForm">
+      <h2>Faça login</h2>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" required>
+      
+      <button onclick="login()">Entrar</button>
+      
+      <p>Não tem uma conta? <a href="#" onclick="showRegisterForm()">Crie uma agora!</a></p>
+    </div>
+    
+    <div id="registerForm" style="display: none;">
+      <h2>Criar conta</h2>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" required>
+      
+      <label for="emailRegistro">Email:</label>
+      <input type="email" id="emailRegistro" required>
+      
+      <label for="senhaRegistro">Senha:</label>
+      <input type="password" id="senhaRegistro" required>
+      
+      <button onclick="register()">Registrar</button>
+      
+      <p>Já tem uma conta? <a href="#" onclick="showLoginForm()">Faça login!</a></p>
+    </div>
+    
+    <div id="cartaoVirtual" style="display: none;">
+      <h2>Seu Cartão Virtual</h2>
+      <p><strong>Nome:</strong> <span id="nomeUsuario"></span></p>
+      <p><strong>Email:</strong> <span id="emailUsuario"></span></p>
+      <p><strong>Número do Estudante:</strong> <span id="numeroEstudante"></span></p>
+      <p><strong>Curso:</strong> <span id="curso"></span></p>
+      <p><strong>Universidade:</strong> <span id="universidade"></span></p>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
