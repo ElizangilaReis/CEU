@@ -1,0 +1,816 @@
+@charset "UTF/8";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@500;600&display=swap");html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display: block
+}
+
+body {
+    line-height: 1
+}
+
+ol,ul {
+    list-style: none
+}
+blockquote,q {
+    quotes: none
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+    content: '';
+    content: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit
+}
+
+a {
+    text-decoration: none;
+    border: none;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible
+    }
+}
+
+@keyframes showDown {
+    from {
+        opacity: 0;
+        transform: translateY(-200%)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes backgroundScale {
+    to {
+        /*background-color: #8257E6;*/
+        transform: scale(1.1)
+    }
+}
+
+@keyframes scaleDelayed {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.1)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+:root {
+    font-size: 62.5%;
+    scroll-behavior: smooth
+}
+
+@media (max-width: 480px) {
+    :root {
+        font-size:55%
+    }
+}
+
+@media (max-width: 860px) {
+    :root {
+        font-size:57%
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        font-size:59%
+    }
+}
+
+@media (max-width: 1200px) {
+    :root {
+        font-size:61%
+    }
+}
+
+:root body {
+    font-size: 1.6rem
+}
+
+.hidden {
+    display: none !important
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%
+}
+
+::-webkit-scrollbar {
+    width: 1.4rem
+}
+
+::-webkit-scrollbar-track {
+    background: white
+}
+
+::-webkit-scrollbar-thumb {
+    background: white
+}
+
+body {
+    background-image: url(img/BACKGROUND-1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 010px;
+    position: relative;
+    min-height: 80vh;
+    padding-bottom: 100px;
+    line-height: 1;
+    display: block;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color:#43caf3a6;
+}
+
+header.open {
+    background-color: white;
+    backdrop-filter: blur(10px)
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #43caf3a6;
+}
+
+header.open {
+    background-color: white;
+    backdrop-filter: blur(10px)
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 0;
+    flex-wrap: wrap
+}
+
+header .container .menu i {
+    font-size: 2rem;
+    color: black;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%
+}
+
+header .container .menu i:hover {
+    background-color: white;
+    color: #43caf3a6
+}
+
+header .container h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2.6rem;
+    font-weight: bold;
+    color: black;
+}
+
+header .container .toggle {
+    display: flex
+}
+
+header .container .toggle input {
+    opacity: 0;
+    position: absolute
+}
+
+header .container .toggle input:checked+.label .box {
+    transform: translateX(4rem)
+}
+
+@media (max-width: 480px) {
+    header .container .toggle input:checked+.label .box {
+        transform:translateX(2rem)
+    }
+}
+
+header .container .toggle input:checked+.label {
+    background-color: #F9F9F9
+}
+
+header .container .toggle .label {
+    display: flex;
+    background: #F9F9F9;
+    width: 6rem;
+    border-radius: 2rem;
+    padding: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.5s
+}
+
+@media (max-width: 480px) {
+    header .container .toggle .label {
+        width:4rem
+    }
+}
+
+header .container .toggle .label .box {
+    background-color: #43caf3a6;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    transition: 0.5s
+}
+
+@media (max-width: 480px) {
+    header .container .toggle .label .box {
+        height:1.5rem;
+        width: 1.5rem
+    }
+}
+
+header::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0.1rem;
+    background-image: linear-gradient(90deg, white 0%, black 92.32%)
+}
+
+section#sobre {
+    padding-bottom: 11.25rem
+}
+
+@media (max-width: 480px) {
+    section#sobre {
+        padding-bottom:5rem
+    }
+}
+
+section#sobre .container {
+    display: flex;
+    flex-direction: column
+}
+
+section#sobre .banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10rem 2.5rem
+}
+
+@media (max-width: 480px) {
+    section#sobre .banner {
+        flex-wrap:wrap-reverse;
+        justify-content: center;
+        padding-top: 5rem;
+        text-align: center
+    }
+}
+
+@media (max-width: 480px) {
+    section#sobre .banner .profile {
+        text-align:center
+    }
+}
+
+section#sobre .banner .profile img {
+    cursor: pointer;
+    transition: 0.2s;
+    max-width: 100%;
+    animation: scaleDelayed 1s 6.5s
+}
+
+section#sobre .banner .profile img:hover {
+    transform: scale(1.1)
+}
+
+@media (max-width: 860px) {
+    section#sobre .banner .profile img {
+        width:30rem
+    }
+}
+
+@media (max-width: 660px) {
+    section#sobre .banner .profile img {
+        width:19rem
+    }
+}
+
+@media (max-width: 480px) {
+    section#sobre .banner .profile img {
+        width:60%;
+        margin-bottom: 2.5rem
+    }
+}
+
+section#sobre .banner .intro {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem
+}
+
+section#sobre .banner .intro .title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem
+}
+
+section#sobre .banner .intro .title h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4.2rem;
+    font-weight: 500;
+    color: black;
+    line-height: 5.4rem
+}
+
+@media (max-width: 860px) {
+    section#sobre .banner .intro .title h1 {
+        font-size:clamp(2rem, 5vw, 4rem) !important;
+        line-height: 120% !important
+    }
+}
+
+@media (max-width: 480px) {
+    section#sobre .banner .intro .title h1 {
+        font-size:clamp(3.6rem, 10vw, 4.2rem) !important;
+        line-height: 120% !important
+    }
+}
+
+section#sobre .banner .intro .title span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4.2rem;
+    font-weight: 500;
+    color: black;
+    line-height: 5.4rem;
+    display: block;
+    color: black
+}
+
+@media (max-width: 860px) {
+    section#sobre .banner .intro .title span {
+        font-size:clamp(2rem, 5vw, 4rem) !important;
+        line-height: 120% !important
+    }
+}
+
+@media (max-width: 480px) {
+    section#sobre .banner .intro .title span {
+        font-size:clamp(3.6rem, 10vw, 4.2rem) !important;
+        line-height: 130% !important
+    }
+}
+
+section#sobre .banner .intro .title p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: black
+}
+
+@media (max-width: 860px) {
+    section#sobre .banner .intro .title p {
+        font-size:clamp(1.4rem, 2.3vw, 1.8rem) !important;
+        line-height: 120% !important
+    }
+}
+
+@media (max-width: 480px) {
+    section#sobre .banner .intro .title p {
+        font-size:clamp(1rem, 8vw, 1.8rem) !important;
+        line-height: 150% !important
+    }
+}
+
+section#sobre .banner .intro .actions {
+    display: flex;
+    gap: 2.5rem
+}
+
+@media (max-width: 480px) {
+    section#sobre .banner .intro .actions {
+        justify-content:center;
+        flex-wrap: wrap
+    }
+}
+
+section#sobre .banner .intro .actions a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: black;
+    padding: 1.2rem 2.7rem;
+    background-image: linear-gradient(90deg, white .2%, rgba(105, 159, 209, 0.68) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    transition: 0.3s
+}
+
+section#sobre .banner .intro .actions a:nth-child(2) {
+    background-image: linear-gradient(90deg, white .2%, rgba(105, 159, 209, 0.68) 100%);
+    border: 0.1rem solid #43caf3a6
+}
+
+section#sobre .banner .intro .actions a:hover {
+    background-image: linear-gradient(90deg, rgba(121,48,190,0.648) 100%, rgba(130,87,230,0.8) .2%);
+    transform: scale(0.95)
+}
+
+@media (max-width: 860px) {
+    section#sobre .banner .intro .actions a {
+        font-size:clamp(1.2rem, 2vw, 1rem) !important;
+        padding: 1.2rem 1.5rem !important;
+        border-radius: 2rem
+    }
+}
+
+@media (max-width: 660px) {
+    section#sobre .banner .intro .actions a {
+        font-size:clamp(1.1rem, 1.5vw, 1rem) !important;
+        padding: 1rem 1rem !important
+    }
+}
+
+@media (max-width: 480px) {
+    section#sobre .banner .intro .actions a {
+        width:100% !important;
+        font-size: 1.6rem !important;
+        padding: 1.4rem 2.5rem !important
+    }
+}
+
+section#sobre .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem
+}
+
+section#sobre .about h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 3.2rem;
+    color: black;
+    font-weight: 600
+}
+
+section#sobre .about p {
+    color: black;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    width: 55%;
+    line-height: 180%
+}
+
+@media (max-width: 1200px) {
+    section#sobre .about p {
+        width:100%
+    }
+}
+
+.menuOpen {
+    position: fixed;
+    width: 100%;
+    z-index: 200;
+    background-color: rgba(0,0,0,0.65);
+    backdrop-filter: blur(10px);
+    top: 9%;
+    height: 100vh;
+    animation: appearField 1s;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding-top: 7.5rem;
+    align-items: center;
+    animation: fade 1s
+}
+
+.menuOpen h2 {
+    color: #43caf3a6;
+    font-weight: 600;
+    font-size: 3.8rem
+}
+
+@media (max-width: 660px) {
+    .menuOpen h2 {
+        font-size:clamp(1.6rem, 6vw, 3rem) !important
+    }
+}
+
+.menuOpen nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10rem;
+    gap: 3.75rem;
+    height: 100%
+}
+
+@media (max-width: 480px) {
+    .menuOpen nav {
+        gap:7.5rem
+    }
+}
+
+.menuOpen nav a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #F9F9F9;
+    font-size: 3.8rem;
+    transition: 0.3s
+}
+
+.menuOpen nav a:hover {
+    color: #43caf3a6;
+    transform: scale(1.4)
+}
+
+@media (max-width: 480px) {
+    .menuOpen nav a {
+        font-size:3rem
+    }
+}
+
+body.transparent::after {
+    content: "";
+    width: 100%;
+    height: 1000%;
+    background-color: rgba(0,0,0,0.65);
+    backdrop-filter: blur(3px);
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 0;
+    animation: fade 1s
+}
+
+body.light-mode {
+    background-color: #F9F9F9
+}
+
+body.light-mode header {
+    background-color: white
+}
+body.light-mode footer {
+    background-color: white
+}
+
+body.light-mode header h2 {
+    color: #FFC0CB!important
+}
+
+body.light-mode .banner h1 {
+    color: #13131F !important
+}
+
+body.light-mode .banner span {
+    color: #13131F !important
+}
+
+body.light-mode .banner .actions a:nth-child(2) {
+    color: #13131F !important
+}
+
+body.light-mode .banner .actions a:nth-child(2):hover {
+    color: #F9F9F9 !important
+}
+
+body.light-mode h2,body.light-mode h3 {
+    color: #13131F !important
+}
+
+body.light-mode .contacts p {
+    color: #13131F !important
+}
+
+body.light-mode .modal h2 {
+    color: #43caf3a6 !important
+}
+
+body.light-mode .menuOpen h2 {
+    color: #F9F9F9 !important
+}
+#contactos{
+    clear: both;
+    position: absolute;
+    bottom: -50%;
+    margin: 0;
+    background-color: rgba(67, 202, 243, 0.651);
+    padding: 50px 0 0;
+    padding-bottom: 10%;
+    width: 100%;
+    border: none;
+
+}
+
+#contactos p{
+    text-align: center;
+    clear: both;
+}
+
+img.logo-footer{
+    width: 50px;
+    height: auto;
+    border-radius: 10%;
+    padding: 20px;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+img.perfil{
+    border-radius: 10%;
+}
+
+/* Estilos CSS para o formulário */
+.center-div2 {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    max-width: 400px;
+}
+  
+label {
+    font-weight: bold;
+}
+
+input[type="text"]{
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+  
+button {
+    background-color: #4CAF50;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    margin: 0 auto;
+}
+
+.center-div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: #fff;
+    border-radius: 10px;
+    perspective: 1000px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    max-width: 400px;
+    padding-top: 10px;
+  }
+
+  .center-div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/principal/img/Design_CEU.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    border-radius: 10px;
+    z-index: -1;
+  }
+  
+  .center-div p {
+    margin: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  
+  .center-div span {
+    font-weight: bold;
+  }
+  
+  .center-div:hover {
+    transform: rotateY(20deg);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s, box-shadow 0.5s;
+  }
+  
+
+/* Formatacao do menu */
+/*header#cabecalho img#icone{
+    position: absolute;
+    left: 920px;
+    top: 60px;
+}*/
+
+header#cabecalho{
+    border-bottom: 1px #606060 solid;
+    height: 150px;
+    background-color: white;
+}
+
+header#cabecalho h1{
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 30px;
+    color: #606060;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
+    padding: 20px 0px 0px 10px;
+    margin-bottom: 0px;
+}
+
+header#cabecalho h2{
+   font-family: 'Titillium Web', sans-serif; 
+   color: #888888;
+   font-size: 15pt;
+   padding: 0px 0px 0px 10px;
+   margin-top: 0px;
+}
+  
+nav#menu{
+    display: block;
+}
+nav#menu ul{
+    list-style: none;
+    text-transform: uppercase;
+}
+nav#menu li{
+    display: inline-block;
+    background-color: #dddddd;
+    padding: 10px;
+    margin: 2px;
+    transition: background-color 1s;
+}
+
+nav#menu li:hover{
+    background-color: #606060;
+}
+
+nav#menu h1{
+    display: none;
+}
+
+nav#menu a{
+    color: #000000;
+    text-decoration: none;
+}
+
+nav#menu a:hover{
+    color: #ffffff;
+    text-decoration: underline;
+}

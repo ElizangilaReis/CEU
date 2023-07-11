@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="cartoes1.js"></script>
+    <link rel="stylesheet" href="/principal/style.css">
+    <title>CARTAO UNENE DEMO</title>
+</head>
+<body>
+  <div id="interface">
+
+    <header id="cabecalho">
+    <hgroup>
+    <h1>CARTÃO UNENE DEMO</h1>
+    <h2>Gerador de Cartões Virtuais</h2>
+    </hgroup>
+
+    <nav id="menu">
+        <ul>
+            <li><a href="/principal/index.html" target="_blank">Home</a></li>
+            <li><a href="#contactos">Fale conosco</a></li>
+        </ul>
+    </nav>
+
+    </header>
+    <div class="center-div2">
+        <h2></h2>
+        <form id="cartaoForm">
+          <label for="nome">Nome do Estudante:</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite o seu nome" required>
+    
+          <label for="numero">Número do Estudante: </label>
+          <input type="text" id="numero" name="numero" placeholder="Digite o seu numero de estudante" required>
+    
+          <label for="curso">Curso:</label>
+          <input type="text" id="curso" name="curso" placeholder="Digite o seu curso" required>
+    
+          <label for="univ">Universidade:</label>
+          <input type="text" id="univ" name="univ" placeholder="Digite a sua universidade" required>
+     
+          <button type="submit"><strong>Gerar Cartão</strong></button>
+        </form>
+    </div>
+    <div>
+        <div id="cartaoGerado" style="display: none;" class="center-div">
+          <p><span id="numeroCartaoCredito"></span></p>
+          <p><span id="nomeEstudante"></span></p>
+          <p><span id="numeroEstudante"></span></p>
+          <p><span id="curso"></span></p>
+          <p><span id="universidade"></span></p>
+          <p><strong>Validade:</strong> <span id="dataValidade"></span></p>
+        </div>
+    </div>
+    <footer id="contactos">
+      <p>&copy; 2023 - By Elizangila dos Reis<br>
+          
+          <a href="" target="_blank">
+              <img src="/principal/img/gmail.png" alt="e-mail" class="logo-footer">
+          </a>
+
+          <a href="" target="_blank">
+              <img src="/principal/img/whatsapp.png" alt="telefone" class="logo-footer">
+          </a>
+             
+           
+          <a href="" target="_blank">
+              <img src="/principal/img/linkedin.png" alt="linkedin" class="logo-footer">
+          </a>
+              
+          <a href="" target="_blank">
+              <img src="/principal/img/instagram.png" alt="instagram" class="logo-footer">
+          </a>
+      </p>
+  </footer>
+</body>
+</html>
